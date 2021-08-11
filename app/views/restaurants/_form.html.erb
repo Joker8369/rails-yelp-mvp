@@ -1,0 +1,16 @@
+<%= simple_form_for(@restaurant) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <%= f.label :category %>
+  <%= f.select :category, Restaurant::CATEGORY  %>
+
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  <%= f.submit "click!" %>
+<% end %>
